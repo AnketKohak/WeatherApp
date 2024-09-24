@@ -22,3 +22,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+https://api.openweathermap.org/data/2.5/weather?q=london&appid=4b5bccc114f5c70a9f5fdc38a60cbe8d
