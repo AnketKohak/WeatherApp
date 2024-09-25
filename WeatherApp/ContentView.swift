@@ -10,10 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button("Get the Location"){
+                Task{
+                    print("button is pressed")
+                    let geocodingClient = GeoCodingClient()
+                    let location = try! await geocodingClient.corinateByCity("Mumbai")
+                    print(location)
+                }
+            }
+            
+            
         }
         .padding()
     }
@@ -22,4 +28,3 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
-https://api.openweathermap.org/data/2.5/weather?q=london&appid=4b5bccc114f5c70a9f5fdc38a60cbe8d

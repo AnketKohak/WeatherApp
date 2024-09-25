@@ -7,24 +7,25 @@
 
 import Foundation
 
-
-enum APIEndPoint{
+enum APIEndpoint {
+    
     static let baseURL = "https://api.openweathermap.org"
     
-    case cordinatesByLocation(String)
-    case weatherByLatLon(Double,Double)
+    case coordinatesByLocationName(String)
+    case weatherByLatLon(Double, Double)
     
-    private var path:String{
-        switch self{
-        case .cordinatesByLocation(let city):
-            return "data/2.5/weather?q=\(city)&appid=\(Constant.key)"
-        case .weatherByLatLon(let lat, let lan):
-            return "data/3.0/onecall?lat=\(lat)&lon=\(lan)&appid=\(Constant.key)"
+    private var path: String {
+        switch self {
+            case .coordinatesByLocationName(let city):
+                return "/geo/1.0/direct?q=\(city)&appid=\(Constants.Keys.weatherAPIKey)"
+            case .weatherByLatLon(let lat, let lon):
+                return "/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(Constants.Keys.weatherAPIKey)"
         }
     }
     
-    static func endPointURL(for endpoint:APIEndPoint)->URL{
-        let endPointPath = endpoint.path
-        return URL(string:baseURL + endPointPath)!
+    static func endpointURL(for endpoint: APIEndpoint) -> URL {
+        let endpointPath = endpoint.path
+        return URL(string: baseURL + endpointPath)!
     }
+    
 }

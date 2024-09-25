@@ -8,9 +8,12 @@
 import Foundation
 
 
-struct WeatherResponse: Decodable{
+
+
+struct WeatherResponse: Decodable {
     let main: Weather
 }
-struct Weather:Decodable{
+
+struct Weather: Decodable {
     let temp: Double
 }

@@ -8,6 +8,11 @@
 import Foundation
 
 
-struct Constant{
-    static let key = "4b5bccc114f5c70a9f5fdc38a60cbe8d"
+
+struct Constants {
+    
+    struct Keys {
+        static let weatherAPIKey = "4b5bccc114f5c70a9f5fdc38a60cbe8d"
+    }
 }
+
