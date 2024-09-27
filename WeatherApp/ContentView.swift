@@ -14,8 +14,10 @@ struct ContentView: View {
                 Task{
                     print("button is pressed")
                     let geocodingClient = GeoCodingClient()
+                    let weatherCleint = WeatherClient()
                     let location = try! await geocodingClient.corinateByCity("Mumbai")
-                    print(location)
+                    let weather = try! await weatherCleint.fetchWeather(location: location!)
+                    print(weather)
                 }
             }
             
