@@ -4,7 +4,7 @@ A simple weather application built with SwiftUI that fetches current weather dat
 
 ## Features
 - 🔍 Search for current weather by city name.
-- 🌡️ Displays weather information such as temperature, humidity, and weather conditions.
+- 🌡️ Displays weather information such as temperature.
 - 🎨 Clean and minimal UI using SwiftUI.
 
 ## Screenshots
